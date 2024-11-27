@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FiUsers, FiKey, FiShield, FiUserCheck } from "react-icons/fi";
+import { FiUsers, FiKey, FiShield } from "react-icons/fi";
 import { api } from "../services/api";
 import { User, Role } from "../types";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +39,7 @@ const Dashboard: React.FC = () => {
           name: role.name,
           userCount: usersData.filter((user) => user.role === role.name).length,
         }));
-
+        console.log(usersPerRole)
         setUsersPerRole(userRoleCounts);
       } catch (error) {
         console.error("Error fetching dashboard data:", error);
